@@ -1,0 +1,11 @@
+{application,control,
+             [{description,"An OTP application"},
+              {vsn,"0.1.0"},
+              {registered,[]},
+              {mod,{control_app,[]}},
+              {applications,[kernel,stdlib]},
+              {env,[]},
+              {modules,[control,control_app,control_appl,control_node,
+                        control_sup,lib_control,lib_control_node]},
+              {licenses,["Apache-2.0"]},
+              {links,[]}]}.
