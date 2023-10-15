@@ -51,6 +51,7 @@ setup()->
     io:format("Start ~p~n",[{?MODULE,?FUNCTION_NAME}]),
     ok=application:start(control_provider),
     pong=control_provider:ping(),
+    
   %  pong=log:ping(),
 
     ok.
