@@ -75,10 +75,13 @@ ping()->
 	  {stop, Reason :: term()} |
 	  ignore.
 init([]) ->
-    application:start(etcd),
+  
     application:start(log),
+    timer:sleep(5000),
     application:start(rd),
-
+    timer:sleep(5000),
+    application:start(etcd),
+    timer:sleep(5000),
     application:start(control),
     {ok, #state{}}.
 
