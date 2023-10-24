@@ -13,6 +13,13 @@
 -define(TargetTypes,[etcd]). 
 -define(BuildPath,"ebin").
 
+
+-define(MainLogDir,"logs").
+-define(LocalLogDir,"to_be_changed.logs").
+-define(LogFile,"logfile").
+-define(MaxNumFiles,10).
+-define(MaxNumBytes,100000).
+
 %% API
 
 
@@ -77,6 +84,8 @@ ping()->
 init([]) ->
   
     application:start(log),
+    LocalLogDir=atom_to_list(node())++".logs",
+    ok=rpc:call(node(),log,create_logger,[?MainLogDir,LocalLogDir,?LogFile,?MaxNumFiles,?MaxNumBytes],5000),
     timer:sleep(5000),
     application:start(rd),
     timer:sleep(5000),
