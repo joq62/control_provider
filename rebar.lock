@@ -1,6 +1,6 @@
 [{<<"control">>,
   {git,"https://github.com/joq62/control.git",
-       {ref,"791d47baf32f95d3778272cffdb701d9e61919d3"}},
+       {ref,"fb75f83323a77cc42bdb6723631c65817741543b"}},
   0},
  {<<"etcd">>,
   {git,"https://github.com/joq62/etcd.git",
